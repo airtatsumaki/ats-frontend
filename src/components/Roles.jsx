@@ -7,7 +7,7 @@ function Roles(){
 
   return(
     <>
-      {roleIndex ? 
+      {jobs[roleIndex] ? 
         <div className="role-name">{jobs[roleIndex]}</div> : 
         jobs && jobs.map((item, index) => {
           return <div className="role-name" key={index}>{item}</div>
