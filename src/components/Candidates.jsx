@@ -3,12 +3,14 @@ function Candidates() {
 
  //use useEffect to render candidates from DB
   return (
-    <div className="App">
-      <>
+    <div>
         {candidates && candidates.map((item, index) => {
-          return <div key={index}>{item}</div>
+          return (
+            <div key={index}>
+              {item}
+            </div>
+          )
         })}
-      </>
     </div>
   )
 }
