@@ -46,21 +46,17 @@ function Roles(props){
     getData();
   }, []);
 
-  function returnSingleRole(theIndex){
+  function getSingleJob(theIndex){
     return(
       <div>
-        {roleIndex && jobs.map((item, index) => {
-          if(theIndex == index){
-            return (
-              <div className="role-name">{item.role}</div>
-            )
-          }
-        })}
+        {jobs.filter((theJob, index)=> index == theIndex).map((jobFound, index) => (
+          <div className="role-name" key={index}>{jobFound.role}</div>
+        ))}
       </div>
     )
   }
 
-  function returnAllRoles(){
+  function getAllRoles(){
     return(
       <div>
         {jobs.map((item, index) => {
@@ -75,13 +71,16 @@ function Roles(props){
   }
 
   return(
-      <div>
+      <>
         {
           roleIndex ?
-            returnSingleRole(roleIndex) 
-            : returnAllRoles()
+            (<div>
+              {getSingleJob(roleIndex)}
+              <a href={"/roles"}>GO BACK</a>
+            </div>)
+            : getAllRoles()
         }
-      </div>
+      </>
   )
 
 }
