@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function Roles(props){
+function Roles(){
   const { roleIndex } = useParams();
   const [jobs, setJobs] = useState(["job 1", "job 2"]);
 
@@ -44,7 +44,7 @@ function Roles(props){
     getData();
   }, []);
 
-  function returnSingleRole(theIndex){
+  function getSingleJob(theIndex){
     return(
       <div>
         {jobs.filter((item, index) => theIndex == index)
@@ -53,7 +53,7 @@ function Roles(props){
     )
   }
 
-  function returnAllRoles(){
+  function getAllRoles(){
     return(
       <div>
         {jobs.map((item, index) => {
@@ -68,15 +68,41 @@ function Roles(props){
   }
 
   return(
-      <div>
+      <>
         {
           roleIndex ?
-            returnSingleRole(roleIndex) 
-            : returnAllRoles()
+            (<div>
+              {getSingleJob(roleIndex)}
+              <a href={"/roles"}>GO BACK</a>
+            </div>)
+            : getAllRoles()
         }
-      </div>
+      </>
   )
 
 }
 
 export default Roles
+
+
+// https://pokeapi.co/api/v2/pokemon/
+  // async function getData(){
+  //   // const axios = API("https://pokeapi.co/api/v2/pokemon/", );
+  //   try{
+  //     // const response = await axios.get("https://pokeapi.co/api/v2/pokemon/pikachu");
+      
+  //     // if (response.status == "200"){
+  //     //   const {data: {abilities}} = response;
+  //     //   console.log(abilities);
+  //     //   //do stuff
+  //     // }
+  //     const response = await axios.get("http://localhost:8080/roles");
+  //     // const {data: {message}} = response;
+  //     console.log(response.data);
+  //   }catch(err){
+  //     console.log(err);
+  //   }
+  //   //set data
+  //   // jobs = response.data;
+  //   setJobs(response.data);
+  // }
