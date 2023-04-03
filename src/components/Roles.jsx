@@ -1,13 +1,11 @@
 import "./styles/Roles.css"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Roles(props){
   const { roleIndex } = useParams();
-  
-  let jobsArr = ["job 1", "job 2"];
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState(["job 1", "job 2"]);
 
   // https://pokeapi.co/api/v2/pokemon/
   // async function getData(){
@@ -49,13 +47,8 @@ function Roles(props){
   function returnSingleRole(theIndex){
     return(
       <div>
-        {roleIndex && jobs.map((item, index) => {
-          if(theIndex == index){
-            return (
-              <div className="role-name">{item.role}</div>
-            )
-          }
-        })}
+        {jobs.filter((item, index) => theIndex == index)
+          .map((jobFound) => <div className="role-name">{jobFound.role}</div>)}
       </div>
     )
   }
@@ -66,7 +59,7 @@ function Roles(props){
         {jobs.map((item, index) => {
           return (
             <div className="role-name" key={index}>
-              <a href={`/roles/${index}`}>{item.role}</a>
+              <Link to={`/roles/${index}`}>{item.role}</Link>
             </div>
           )
         })}
