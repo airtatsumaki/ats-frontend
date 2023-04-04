@@ -1,7 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import 'bootstrap/dist/css/bootstrap.css';
 import Candidates from "./components/Candidates"
 import Roles from "./components/Roles"
+import Home from "./Home";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,7 +13,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>HELLO WORLD!</div>,
+    element: <Home />,
   },
   {
     path: "/candidates",

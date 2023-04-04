@@ -1,0 +1,10 @@
+.sidebar{
+  width: 175px;
+  height: 100vh;
+  background-color: purple;
+  float: left;
+}
+
+.sidebar-item{
+  margin: 10px auto;
+}

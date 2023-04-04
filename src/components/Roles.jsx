@@ -22,7 +22,14 @@ function Roles(){
     return(
       <div>
         {jobs.filter((item, index) => theIndex == index)
-          .map((jobFound) => <div className="role-name">{jobFound.role}</div>)}
+          .map((jobFound, index) => {
+            return (
+              <div key={index}>
+                <div className="role-name">{jobFound.role}</div>
+                <div className="role-desc">{jobFound.roleDescription}</div>
+              </div>
+            )
+          })}
       </div>
     )
   }
