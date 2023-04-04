@@ -1,47 +1,21 @@
 import "./styles/Roles.css"
 import { useParams, Link } from "react-router-dom"
-import axios from "axios";
 import { useState, useEffect } from "react";
+import { API } from '../api-service';
 
 function Roles(){
   const { roleIndex } = useParams();
   const [jobs, setJobs] = useState(["job 1", "job 2"]);
 
-  // https://pokeapi.co/api/v2/pokemon/
-  // async function getData(){
-  //   // const axios = API("https://pokeapi.co/api/v2/pokemon/", );
-  //   try{
-  //     // const response = await axios.get("https://pokeapi.co/api/v2/pokemon/pikachu");
-      
-  //     // if (response.status == "200"){
-  //     //   const {data: {abilities}} = response;
-  //     //   console.log(abilities);
-  //     //   //do stuff
-  //     // }
-  //     const response = await axios.get("http://localhost:8080/roles");
-  //     // const {data: {message}} = response;
-  //     console.log(response.data);
-  //   }catch(err){
-  //     console.log(err);
-  //   }
-  //   //set data
-  //   // jobs = response.data;
-  //   setJobs(response.data);
-  // }
-
   useEffect(() => {
-    async function getData(){
-      try{
-        const response = await axios.get("http://localhost:8080/roles");
-        console.log(response.data);
-        setJobs(response.data);
-      }catch(err){
+    (async () => {
+      try {
+        const roles = await API.getDataFromApi("http://localhost:8080/roles");
+        roles ? setJobs(roles.data) : null;
+      } catch(err) {
         console.log(err);
       }
-    }
-    // roleIndex ? setRolesPage(1) : setRolesPage(0);
-    console.log(roleIndex);
-    getData();
+    })()
   }, []);
 
   function getSingleJob(theIndex){
@@ -73,7 +47,7 @@ function Roles(){
           roleIndex ?
             (<div>
               {getSingleJob(roleIndex)}
-              <a href={"/roles"}>GO BACK</a>
+              <Link to={"/roles"}>GO BACK</Link>
             </div>)
             : getAllRoles()
         }
