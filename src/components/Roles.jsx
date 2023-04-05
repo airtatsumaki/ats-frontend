@@ -63,7 +63,7 @@ function Roles(){
 
 }
 
-export default Roles
+export default Roles;
 
 
 // https://pokeapi.co/api/v2/pokemon/

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Candidates from "./components/Candidates"
 import Roles from "./components/Roles"
 import Home from "./Home";
-
+import Shell from './pages/Shell';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,7 +13,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Shell />,
   },
   {
     path: "/candidates",
