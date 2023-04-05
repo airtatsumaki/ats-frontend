@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import './styles/BSHeader.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function BasicExample() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="test">
       <Container>
         <Navbar.Brand href="/"><FontAwesomeIcon icon={faUsers} /> Applycation</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
