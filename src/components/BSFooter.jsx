@@ -3,7 +3,7 @@ import './styles/BSFooter.css';
 function getYear(){
   const now = new Date();
   console.log()
-  return "2023";
+  return now.getFullYear();
 }
 
 function BSFooter(){
