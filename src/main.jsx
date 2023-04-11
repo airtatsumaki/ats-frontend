@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import 'bootstrap/dist/css/bootstrap.css';
 import Candidates from "./components/Candidates"
 import Roles from "./components/Roles"
-import Home from "./Home";
+import Home from "./components/Home";
 import Shell from './pages/Shell';
 import {
   createBrowserRouter,
