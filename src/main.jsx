@@ -14,19 +14,27 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Shell />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/candidates",
+        element: <Candidates />,
+      },
+      {
+        path: "/roles",
+        element: <Roles />,
+      },
+      {
+        path: "/roles/:roleIndex",
+        element: <Roles />
+      },
+    ],
   },
-  {
-    path: "/candidates",
-    element: <Candidates />,
-  },
-  {
-    path: "/roles",
-    element: <Roles />,
-  },
-  {
-    path: "/roles/:roleIndex",
-    element: <Roles />
-  },
+  
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

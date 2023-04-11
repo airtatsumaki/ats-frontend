@@ -5,13 +5,9 @@ import Sidebar from "./components/Sidebar";
 
 function Home(){
   return (
-    <>
-      <Header />
-      <Sidebar />
-      <div>HELLO WORLD!
-      <br /><br />
-      THIS WILL BE THE HOMEPAGE MAIN CONTENT</div>
-    </>
+    <div style={{paddingTop: "50px"}}>
+      THIS WILL BE THE HOMEPAGE MAIN CONTENT
+    </div>
   );
 }
 

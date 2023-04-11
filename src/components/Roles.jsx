@@ -20,7 +20,7 @@ function Roles(){
 
   function getSingleJob(theIndex){
     return(
-      <div>
+      <div style={{paddingTop: "50px"}}>
         {jobs.filter((item, index) => theIndex == index)
           .map((jobFound, index) => {
             return (
@@ -36,7 +36,7 @@ function Roles(){
 
   function getAllRoles(){
     return(
-      <div>
+      <div style={{paddingTop: "50px"}}>
         {jobs.map((item, index) => {
           return (
             <div className="role-name" key={index}>
