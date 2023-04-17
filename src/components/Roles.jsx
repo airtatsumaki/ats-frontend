@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { API } from '../api-service';
 
 function Roles(){
-  const { roleIndex } = useParams();
+  const { roleID } = useParams();
   const [jobs, setJobs] = useState(["job 1", "job 2"]);
 
   useEffect(() => {
@@ -18,10 +18,10 @@ function Roles(){
     })()
   }, []);
 
-  function getSingleJob(theIndex){
+  function getSingleJob(theRoleID){
     return(
       <div style={{paddingTop: "50px"}}>
-        {jobs.filter((item, index) => theIndex == index)
+        {jobs.filter((item, index) => item._id == theRoleID)
           .map((jobFound, index) => {
             return (
               <div key={index}>
@@ -40,7 +40,7 @@ function Roles(){
         {jobs.map((item, index) => {
           return (
             <div className="role-name" key={index}>
-              <Link to={`/roles/${index}`}>{item.role}</Link>
+              <Link to={`/roles/${item._id}`}>{item.role}</Link>
             </div>
           )
         })}
@@ -51,9 +51,9 @@ function Roles(){
   return(
       <>
         {
-          roleIndex ?
+          roleID ?
             (<div>
-              {getSingleJob(roleIndex)}
+              {getSingleJob(roleID)}
               <Link to={"/roles"}>GO BACK</Link>
             </div>)
             : getAllRoles()

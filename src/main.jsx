@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <Roles />,
       },
       {
-        path: "/roles/:roleIndex",
+        path: "/roles/:roleID",
         element: <Roles />
       },
     ],
