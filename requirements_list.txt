@@ -1,0 +1,7 @@
+to do list of building the app.
+
+1. Pull candidates from database - Components/Candidates.jsx
+2. Update Roles page to pull in role _id into the <Link to=""/>
+3. Create form to add a new Role - Components/NewRole.jsx
+4. The Form from point 3 should post the new role to the api
+5. show confirmation page and 'return to home page' or 'add another role'
