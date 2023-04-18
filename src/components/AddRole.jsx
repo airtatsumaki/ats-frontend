@@ -9,14 +9,14 @@ function AddRole(){
     description: ""
   });
 
-  function handleTitle2(event){
+  function handleTitle(event){
     const t = event.target.value;
     setFormData(prevData => ({
       ...prevData,
       title: t
     }));
   }
-  function handleDescription2(event){
+  function handleDescription(event){
     const d = event.target.value;
     setFormData(prevData => ({
       ...prevData,
@@ -37,11 +37,11 @@ function AddRole(){
       <Form className="left" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formGroupTitle">
           <Form.Label>Role title</Form.Label>
-          <Form.Control type="text" placeholder="Title" value={formData.title} onChange={handleTitle2}/>
+          <Form.Control type="text" placeholder="Title" value={formData.title} onChange={handleTitle}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGroupDesc">
           <Form.Label>Role description</Form.Label>
-          <Form.Control as="textarea" rows={10} type="text" value={formData.description} onChange={handleDescription2} placeholder="Description" />
+          <Form.Control as="textarea" rows={10} type="text" value={formData.description} onChange={handleDescription} placeholder="Description" />
         </Form.Group>
         <Button varient="secondary" type="submit">Submit</Button>
       </Form>
