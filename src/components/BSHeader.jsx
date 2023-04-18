@@ -18,7 +18,7 @@ function BasicExample() {
             </NavDropdown>
             <NavDropdown title="Candidates" id="basic-nav-dropdown">
               <NavDropdown.Item href="/candidates">View candidates</NavDropdown.Item>
-              <NavDropdown.Item href="/candidates">Add a candidate</NavDropdown.Item>
+              <NavDropdown.Item href="/candidates/new">Add a candidate</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

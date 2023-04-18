@@ -1,11 +1,13 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import 'bootstrap/dist/css/bootstrap.css';
-import Candidates from "./components/Candidates"
-import Roles from "./components/Roles"
-import Home from "./components/Home";
-import AddRole from "./components/AddRole";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import Shell from './pages/Shell';
+import Home from "./components/Home";
+import Roles from "./components/Roles";
+import AddRole from "./components/AddRole";
+import Candidates from "./components/Candidates";
+import AddCandidate from "./components/AddCandidate";
+import 'bootstrap/dist/css/bootstrap.css';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/roles/new",
         element: <AddRole />,
+      },
+      {
+        path: "/candidates/new",
+        element: <AddCandidate />,
       },
       {
         path: "/roles/:roleID",

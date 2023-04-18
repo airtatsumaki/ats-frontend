@@ -33,7 +33,7 @@ function AddRole(){
   }
   
   return (
-    <Container fluid className="mt-5 centerContainer">
+    <Container className="mt-5 centerContainer">
       <Form className="left" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formGroupTitle">
           <Form.Label>Role title</Form.Label>
@@ -41,7 +41,7 @@ function AddRole(){
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGroupDesc">
           <Form.Label>Role description</Form.Label>
-          <Form.Control as="textarea" rows={10} type="text" value={formData.description} onChange={handleDescription} placeholder="Description" />
+          <Form.Control as="textarea" rows={3} type="text" value={formData.description} onChange={handleDescription} placeholder="Description" />
         </Form.Group>
         <Button varient="secondary" type="submit">Submit</Button>
       </Form>
