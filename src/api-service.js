@@ -11,4 +11,15 @@ export class API{
       return null;
     }
   }
+
+  static async postDataToApi(path, dataObj){
+    try{
+      const response = await axios.post(path,dataObj);
+      console.log(response);
+      return response
+    } catch(err){
+      console.log(err);
+      return null;
+    }
+  }
 }

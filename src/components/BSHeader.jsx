@@ -1,10 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import './styles/BSHeader.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 
 function BasicExample() {
@@ -17,7 +14,7 @@ function BasicExample() {
           <Nav className="me-auto">
             <NavDropdown title="Jobs" id="basic-nav-dropdown">
               <NavDropdown.Item href="/roles">View jobs</NavDropdown.Item>
-              <NavDropdown.Item href="/roles">Post a jobs</NavDropdown.Item>
+              <NavDropdown.Item href="/roles/new">Post a jobs</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Candidates" id="basic-nav-dropdown">
               <NavDropdown.Item href="/candidates">View candidates</NavDropdown.Item>

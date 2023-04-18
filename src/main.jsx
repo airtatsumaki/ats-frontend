@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Candidates from "./components/Candidates"
 import Roles from "./components/Roles"
 import Home from "./components/Home";
+import AddRole from "./components/AddRole";
 import Shell from './pages/Shell';
 import {
   createBrowserRouter,
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/roles",
         element: <Roles />,
+      },
+      {
+        path: "/roles/new",
+        element: <AddRole />,
       },
       {
         path: "/roles/:roleID",

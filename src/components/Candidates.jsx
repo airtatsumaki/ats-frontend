@@ -21,7 +21,7 @@ function Candidates() {
 
  //use useEffect to render candidates from DB
   return (
-    <Container style={{paddingTop: "50px"}}>
+    <Container className="mt-5">
         {candidates && candidates.map((item, index) => {
           return (
               <div key={index}>

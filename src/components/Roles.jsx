@@ -1,5 +1,6 @@
-import "./styles/Roles.css"
-import { useParams, Link } from "react-router-dom"
+import { Container } from "react-bootstrap";
+import { useParams, Link } from "react-router-dom";
+import "./styles/Roles.css";
 import { useState, useEffect } from "react";
 import { API } from '../api-service';
 
@@ -20,7 +21,7 @@ function Roles(){
 
   function getSingleJob(theRoleID){
     return(
-      <div style={{paddingTop: "50px"}}>
+      <Container className="mt-5">
         {jobs.filter((item, index) => item._id == theRoleID)
           .map((jobFound, index) => {
             return (
@@ -30,13 +31,13 @@ function Roles(){
               </div>
             )
           })}
-      </div>
+      </Container>
     )
   }
 
   function getAllRoles(){
     return(
-      <div style={{paddingTop: "50px"}}>
+      <Container className="mt-5">
         {jobs.map((item, index) => {
           return (
             <div className="role-name" key={index}>
@@ -44,7 +45,7 @@ function Roles(){
             </div>
           )
         })}
-      </div>
+      </Container>
     )
   }
 
