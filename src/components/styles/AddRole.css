@@ -1,9 +1,14 @@
 .centerContainer{
-  width: 70%;
+  max-width: 70%;
   margin: 0 auto;
 }
 
 .left{
   text-align: left;
+}
+
+.centerForm{
+  max-width: 80%;
+  margin: 0 auto;
 }
 

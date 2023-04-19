@@ -5,10 +5,13 @@ DONE - 2. Update Roles page to pull in role _id into the <Link to=""/>
 DONE - 3. Create form to add a new Role - Components/NewRole.jsx
 DONE - 4. The Form from point 3 should post the new role to the api
 DONE - 5. Create form to add candidates
-Done - 6a. Allow candidate to upload cv on form in point 5.
-6b. Setup Multer libray on API server to allow for file uploads
-6c. Test file uploads using postman
+Done - 6a. include fileinput control.
+6b. Create candidate POST route in api (file upload not required)
+6c. Setup Multer libray on API server to allow for file uploads to point 6b
 7. Form from point 5 should post data to the api, including file paths
+8. Add token authentication to API
+9. Allow react to store the token
+10. Control use views based on User type
 
-8. On roles page, select candidate(s) to add to a role
-9. Post this data to api
+11. On roles page, select candidate(s) to add to a role
+12. Post this data to api

@@ -33,18 +33,18 @@ function AddRole(){
   }
   
   return (
-    <Container className="mt-5 centerContainer">
-      <Form className="left" onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formGroupTitle">
-          <Form.Label>Role title</Form.Label>
-          <Form.Control type="text" placeholder="Title" value={formData.title} onChange={handleTitle}/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formGroupDesc">
-          <Form.Label>Role description</Form.Label>
-          <Form.Control as="textarea" rows={3} type="text" value={formData.description} onChange={handleDescription} placeholder="Description" />
-        </Form.Group>
-        <Button varient="secondary" type="submit">Submit</Button>
-      </Form>
+    <Container className="mt-5">
+        <Form className="left centerForm col-sm-12" onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formGroupTitle">
+            <Form.Label>Role title</Form.Label>
+            <Form.Control type="text" placeholder="Title" value={formData.title} onChange={handleTitle}/>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formGroupDesc">
+            <Form.Label>Role description</Form.Label>
+            <Form.Control as="textarea" rows={3} type="text" value={formData.description} onChange={handleDescription} placeholder="Description" />
+          </Form.Group>
+          <Button varient="secondary" type="submit">Submit</Button>
+        </Form>
     </Container>
   );
 }

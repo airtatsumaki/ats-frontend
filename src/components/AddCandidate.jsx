@@ -9,36 +9,36 @@ function AddCandidate(){
   }
   
   return (
-    <Container className="mt-5 centerContainer">
-      <Form className="left">
-        <Row>
-          <Col md={6}>
-            <Form.Group className="mb-3" controlId="formGroupName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Name" />
+    <Container className="mt-5">
+        <Form className="left centerForm col-sm-12">
+          <Row>
+            <Col md={6}>
+              <Form.Group className="mb-3" controlId="formGroupName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" placeholder="Name" />
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group className="mb-3" controlId="formGroupEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="person@website.com" />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row>
+            <Form.Group className="mb-3" controlId="formGroupBlurb">
+              <Form.Label>Blurb</Form.Label>
+              <Form.Control type="text" as="textarea" rows={3} placeholder="More details" />
             </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group className="mb-3" controlId="formGroupEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="person@website.com" />
+          </Row>
+          <Row>
+            <Form.Group controlId="formGroupFile" className="mb-3">
+              <Form.Label>Upload CV</Form.Label>
+              <Form.Control type="file" onChange={addFile}/>
             </Form.Group>
-          </Col>
-        </Row>
-        <Row>
-          <Form.Group className="mb-3" controlId="formGroupBlurb">
-            <Form.Label>Blurb</Form.Label>
-            <Form.Control type="text" as="textarea" rows={3} placeholder="More details" />
-          </Form.Group>
-        </Row>
-        <Row>
-          <Form.Group controlId="formGroupFile" className="mb-3">
-            <Form.Label>Upload CV</Form.Label>
-            <Form.Control type="file" onChange={addFile}/>
-          </Form.Group>
-        </Row>
-        <Button varient="secondary" type="submit">Submit</Button>
-      </Form>   
+          </Row>
+          <Button className="mt-3" varient="secondary" type="submit">Submit</Button>
+        </Form>
     </Container>
   );
 }
