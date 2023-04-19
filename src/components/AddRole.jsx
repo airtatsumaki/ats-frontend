@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Container, Form, Button} from 'react-bootstrap';
 import { API } from '../api-service';
+import { redirect, useNavigate } from "react-router-dom";
 import './styles/AddRole.css';
 
 function AddRole(){
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     description: ""
@@ -30,6 +32,11 @@ function AddRole(){
     const result = await API.postDataToApi("http://localhost:8080/roles", formData);
     console.log(result);
     //make POST route in API, pos this data to database, return to homepage
+    
+    if (result.status == 200){
+      console.log("YES");
+      navigate("/roles");
+    }
   }
   
   return (
