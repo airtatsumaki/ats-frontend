@@ -4,8 +4,28 @@ import { API } from '../api-service';
 import './styles/AddRole.css';
 
 function AddCandidate(){
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    blurb: "",
+    cvpath: ""
+  });
+
+  function handleInput(event){
+    const { name, value } = event.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  }
+
   function addFile(event){
     console.log(event.target.files[0].name);
+    const file = event.target.files[0].name;
+    setFormData(prevData => ({
+      ...prevData,
+      cvpath: file
+    }));
   }
   
   return (
@@ -15,26 +35,26 @@ function AddCandidate(){
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formGroupName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Name" />
+                <Form.Control type="text" name="name" placeholder="Name" onChange={handleInput} value={formData.name} />
               </Form.Group>
             </Col>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="person@website.com" />
+                <Form.Control type="email" name="email" placeholder="person@website.com" onChange={handleInput} value={formData.email} />
               </Form.Group>
             </Col>
           </Row>
           <Row>
             <Form.Group className="mb-3" controlId="formGroupBlurb">
               <Form.Label>Blurb</Form.Label>
-              <Form.Control type="text" as="textarea" rows={3} placeholder="More details" />
+              <Form.Control type="text" name="blurb" as="textarea" rows={3} placeholder="More details" onChange={handleInput} value={formData.blurb}/>
             </Form.Group>
           </Row>
           <Row>
             <Form.Group controlId="formGroupFile" className="mb-3">
               <Form.Label>Upload CV</Form.Label>
-              <Form.Control type="file" onChange={addFile}/>
+              <Form.Control type="file" name="cvpath" onChange={addFile} />
             </Form.Group>
           </Row>
           <Button className="mt-3" varient="secondary" type="submit">Submit</Button>

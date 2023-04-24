@@ -11,7 +11,7 @@ Done - 6a. include fileinput control.
 7. Form from point 5 should post data to the api, including file paths
 8. Add token authentication to API
 9. Allow react to store the token
-10. Control use views based on User type
+10. Control user views based on User type
 
 11. On roles page, select candidate(s) to add to a role
 12. Post this data to api
