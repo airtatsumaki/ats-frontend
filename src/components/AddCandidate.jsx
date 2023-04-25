@@ -15,6 +15,7 @@ function AddCandidate(){
     const { name, value } = event.target;
     // if name == "cvpath" => [name]: event.target.files[0].name
     // else [name]: value
+    // if event.target.files[0].name == null/ "", value = ""
     setFormData(prevData => ({
       ...prevData,
       [name]: value
@@ -22,6 +23,7 @@ function AddCandidate(){
   }
 
   function addFile(event){
+    // if event.target.files[0].name == null/ "", skip
     console.log(event.target.files[0].name);
     const file = event.target.files[0].name;
     setFormData(prevData => ({
