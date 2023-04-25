@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Container, Form, Button, Row, Col} from 'react-bootstrap';
 import { API } from '../api-service';
+import { useNavigate } from "react-router-dom";
 import './styles/AddRole.css';
 
 function AddCandidate(){
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     blurb: "",
-    cvpath: ""
+    // cvpath: ""
   });
 
   function handleInput(event){
@@ -32,8 +34,16 @@ function AddCandidate(){
     }));
   }
 
-  function handleSubmit(event){
+  async function handleSubmit(event){
+    event.preventDefault();
     console.log("you submitted");
+    const result = await API.postDataToApi("http://localhost:8080/candidates", formData);
+    // console.log(result);
+    //make POST route in API, pos this data to database, return to homepage
+    if (result.status == 200){
+      console.log("YES");
+      navigate("/candidates");
+    }
   }
   
   return (
