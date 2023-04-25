@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Container, Form, Button, Row, Col} from 'react-bootstrap';
 import { API } from '../api-service';
 import { useNavigate } from "react-router-dom";
@@ -6,16 +6,21 @@ import './styles/AddRole.css';
 
 function AddCandidate(){
   const navigate = useNavigate();
+  const inputRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     blurb: "",
-    // cvpath: ""
+    cvpath: ""
   });
 
   function handleInput(event){
-    const { name, value } = event.target;
-    // if name == "cvpath" => [name]: event.target.files[0].name
+    let { name, value } = event.target;
+    // console.log(name, value);
+    if (name == "cvpath" && inputRef.current.files[0].name){
+      value = inputRef.current.files[0].name;
+      // value = event.target.files[0].name;
+    }
     // else [name]: value
     // if event.target.files[0].name == null/ "", value = ""
     setFormData(prevData => ({
@@ -36,19 +41,20 @@ function AddCandidate(){
 
   async function handleSubmit(event){
     event.preventDefault();
+    console.log(formData);
     console.log("you submitted");
-    const result = await API.postDataToApi("http://localhost:8080/candidates", formData);
+    const result = await API.postDataToApi("http://localhost:8080/multer-candidate", formData);
     // console.log(result);
     //make POST route in API, pos this data to database, return to homepage
-    if (result.status == 200){
-      console.log("YES");
-      navigate("/candidates");
-    }
+    // if (result.status == 200){
+    //   console.log("YES");
+    //   navigate("/candidates");
+    // }
   }
   
   return (
     <Container className="mt-5">
-        <Form className="left centerForm col-sm-12" onSubmit={handleSubmit}>
+        <Form className="left centerForm col-sm-12" encType="multipart/form-data" onSubmit={handleSubmit}>
           <Row>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formGroupName">
@@ -72,7 +78,7 @@ function AddCandidate(){
           <Row>
             <Form.Group controlId="formGroupFile" className="mb-3">
               <Form.Label>Upload CV</Form.Label>
-              <Form.Control type="file" name="cvpath" onChange={addFile} />
+              <Form.Control type="file" name="cvpath" onChange={handleInput} ref={inputRef}/>
             </Form.Group>
           </Row>
           <Button className="mt-3" varient="secondary" type="submit">Submit</Button>
