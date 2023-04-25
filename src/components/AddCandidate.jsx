@@ -29,10 +29,14 @@ function AddCandidate(){
       cvpath: file
     }));
   }
+
+  function handleSubmit(event){
+    console.log("you submitted");
+  }
   
   return (
     <Container className="mt-5">
-        <Form className="left centerForm col-sm-12">
+        <Form className="left centerForm col-sm-12" onSubmit={handleSubmit}>
           <Row>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="formGroupName">
