@@ -13,6 +13,8 @@ function AddCandidate(){
 
   function handleInput(event){
     const { name, value } = event.target;
+    // if name == "cvpath" => [name]: event.target.files[0].name
+    // else [name]: value
     setFormData(prevData => ({
       ...prevData,
       [name]: value
