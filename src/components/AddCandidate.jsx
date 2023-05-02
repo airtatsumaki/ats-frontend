@@ -18,7 +18,7 @@ function AddCandidate(){
     let { name, value } = event.target;
     // console.log(name, value);
     if (name == "cvpath" && inputRef.current.files[0].name){
-      value = inputRef.current.files[0].name;
+      value = inputRef.current.files[0];
       // value = event.target.files[0].name;
     }
     // else [name]: value
@@ -29,27 +29,31 @@ function AddCandidate(){
     }));
   }
 
-  function addFile(event){
-    // if event.target.files[0].name == null/ "", skip
-    console.log(event.target.files[0].name);
-    const file = event.target.files[0].name;
-    setFormData(prevData => ({
-      ...prevData,
-      cvpath: file
-    }));
-  }
+  // function addFile(event){
+  //   // if event.target.files[0].name == null/ "", skip
+  //   console.log(event.target.files[0].name);
+  //   const file = event.target.files[0].name;
+  //   setFormData(prevData => ({
+  //     ...prevData,
+  //     cvpath: file
+  //   }));
+  // }
 
   async function handleSubmit(event){
     event.preventDefault();
-    console.log(formData);
-    console.log("you submitted");
-    const result = await API.postDataToApi("http://localhost:8080/multer-candidate", formData);
+    // https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
+    const myForm = new FormData();
+    myForm.append('name', formData.name);
+    myForm.append('cvpath', formData.cvpath, formData.cvpath.name);
+    console.log(myForm);
+    // console.log("you submitted");
+    const result = await API.postDataToApi("http://localhost:8080/multer-candidate", myForm);
     // console.log(result);
     //make POST route in API, pos this data to database, return to homepage
-    // if (result.status == 200){
-    //   console.log("YES");
-    //   navigate("/candidates");
-    // }
+    if (result.status == 200){
+      console.log("YES");
+      navigate("/candidates");
+    }
   }
   
   return (
