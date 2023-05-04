@@ -41,17 +41,11 @@ function AddCandidate(){
 
   async function handleSubmit(event){
     event.preventDefault();
-    // https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
     const myForm = new FormData();
     Object.keys(formData).forEach(key => myForm.append(key, formData[key]));
-    // myForm.append('name', formData.name);
     myForm.set('cvpath', formData.cvpath, formData.cvpath.name);
     console.log(...myForm);
-    // console.log(myForm);
-    // // console.log("you submitted");
-    const result = await API.postDataToApi("http://localhost:8080/multer-candidate", myForm);
-    // // console.log(result);
-    // //make POST route in API, pos this data to database, return to homepage
+    const result = await API.postDataToApi("http://localhost:8080/upload", myForm);
     console.log(result);
     // if (result.status == 200){
     //   console.log("YES");

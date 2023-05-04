@@ -18,7 +18,7 @@ function AddRole(){
     // console.log(result);
     //make POST route in API, pos this data to database, return to homepage
     
-    if (result.status == 200){
+    if (result.status == 200) {
       console.log("YES");
       navigate("/roles");
     }

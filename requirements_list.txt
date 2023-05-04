@@ -6,10 +6,10 @@ DONE - 3. Create form to add a new Role - Components/NewRole.jsx
 DONE - 4. The Form from point 3 should post the new role to the api
 DONE - 5. Create form to add candidates
 Done - 6a. include fileinput control.
-DONE 6b. Create candidate POST route in api (file upload not required)
-DONE 6c. Form from point 5 should post data to the api, without file paths
-DONE 6d. Setup Multer libray on API server to allow for file uploads to point 6b
-7. Form from point 5 should post data to the api, including file paths
+DONE - 6b. Create candidate POST route in api (file upload not required)
+DONE - 6c. Form from point 5 should post data to the api, without file paths
+DONE - 6d. Setup Multer libray on API server to allow for file uploads to point 6b
+DONE - 7. Form from point 5 should post data to the api, including file paths
 8. Add token authentication to API
 9. Allow react to store the token
 10. Control user views based on User type
