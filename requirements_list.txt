@@ -9,7 +9,8 @@ Done - 6a. include fileinput control.
 DONE - 6b. Create candidate POST route in api (file upload not required)
 DONE - 6c. Form from point 5 should post data to the api, without file paths
 DONE - 6d. Setup Multer libray on API server to allow for file uploads to point 6b
-DONE - 7. Form from point 5 should post data to the api, including file paths
+DONE - 7a. Form from point 5 should post data to the api, including file paths
+7b - retreive CV for download/ viewing.
 8. Add token authentication to API
 9. Allow react to store the token
 10. Control user views based on User type
