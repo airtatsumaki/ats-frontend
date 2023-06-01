@@ -17,3 +17,14 @@ DONE - 7a. Form from point 5 should post data to the api, including file paths
 
 11. On roles page, select candidate(s) to add to a role
 12. Post this data to api
+
+Git branching commands
+G1. Create new branch (from main) -> git checkout -b <branch-name>
+G2. After branch is complete switch to main -> git checkout main
+G3. Merge changes from G1 -> git merge <branch-name>
+G4. push to remote -> git push origin main
+
+Copying branch from 1 computer to another
+Gi. list all branches -> git branch -a
+Gii. create new branch on computer 2 based on remote repo -> git checkout -b <new-local-branch> <remote-branch>
+Giii. Example -> git checkout -b login-feature origin/login
