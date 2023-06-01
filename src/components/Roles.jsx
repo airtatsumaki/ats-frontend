@@ -6,13 +6,13 @@ import { API } from '../api-service';
 
 function Roles(){
   const { roleID } = useParams();
-  const [jobs, setJobs] = useState(["job 1", "job 2"]);
+  const [roles, setRoles] = useState(["job 1", "job 2"]);
 
   useEffect(() => {
     (async () => {
       try {
         const roles = await API.getDataFromApi("http://localhost:8080/roles");
-        roles ? setJobs(roles.data) : null;
+        roles ? setRoles(roles.data) : null;
       } catch(err) {
         console.log(err);
       }
@@ -22,7 +22,7 @@ function Roles(){
   function getSingleJob(theRoleID){
     return(
       <Container className="mt-5">
-        {jobs.filter((item, index) => item._id == theRoleID)
+        {roles.filter((item, index) => item._id == theRoleID)
           .map((jobFound, index) => {
             return (
               <div key={index}>
@@ -38,7 +38,7 @@ function Roles(){
   function getAllRoles(){
     return(
       <Container className="mt-5">
-        {jobs.map((item, index) => {
+        {roles.map((item, index) => {
           return (
             <div className="role-name" key={index}>
               <Link to={`/roles/${item._id}`}>{item.role}</Link>
