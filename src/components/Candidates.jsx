@@ -25,6 +25,7 @@ function Candidates() {
         {candidates && candidates.map((item, index) => {
           return (
               <div key={index}>
+                {/* Add candidate cv path for view/ download */}
                 {item.name}
               </div>
           )
