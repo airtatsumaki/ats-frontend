@@ -47,10 +47,10 @@ function AddCandidate(){
     console.log(...myForm);
     const result = await API.postDataToApi("http://localhost:8080/upload", myForm);
     console.log(result);
-    // if (result.status == 200){
-    //   console.log("YES");
-    //   navigate("/candidates");
-    // }
+    if (result.status == 200){
+      console.log("YES");
+      navigate("/candidates");
+    }
   }
   
   return (
