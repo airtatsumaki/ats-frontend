@@ -33,7 +33,7 @@ function Candidates() {
                 <div className="candidate-cvPatch">
                 {
                   candidateFound.cvPath ? 
-                    <a href={"http://localhost:8080/downloadFile/" + candidateFound.cvPath}>Download CV as a file ({candidateFound.cvPath})</a>
+                    <a href={`http://localhost:8080/downloadFile/${candidateFound.cvPath}`}>Download CV as a file ({candidateFound.cvPath})</a>
                   : ""}
                 </div>
               </div>
