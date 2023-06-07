@@ -57,7 +57,7 @@ function Roles(){
               {getSingleJob(roleID)}
               <Link to={"/roles"}>GO BACK</Link>
             </div>)
-            : getAllRoles()
+          : getAllRoles()
         }
       </>
   )
