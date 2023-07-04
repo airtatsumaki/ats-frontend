@@ -31,10 +31,12 @@ function Candidates() {
                 <div className="candidate-email">{candidateFound.email}</div>
                 <div className="candidate-blurb">{candidateFound.blurb}</div>
                 <div className="candidate-cvPatch">
+                {/* view/ download CV from api */}
                 {
                   candidateFound.cvPath ? 
-                    <a href={`http://localhost:8080/downloadFile/${candidateFound.cvPath}`}>Download CV as a file ({candidateFound.cvPath})</a>
+                    <a href={`http://localhost:8080/viewFile/${candidateFound.cvPath}`}>Download CV as a file ({candidateFound.cvPath})</a>
                   : ""}
+                {/* display cv with react-dom-viewer */}
                 </div>
               </div>
             );
