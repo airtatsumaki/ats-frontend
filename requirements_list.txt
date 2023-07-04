@@ -11,7 +11,7 @@ DONE - 6c. Form from point 5 should post data to the api, without file paths
 DONE - 6d. Setup Multer libray on API server to allow for file uploads to point 6b
 DONE - 7a. Form from point 5 should post data to the api, including file paths
 DONE - 7b. retreive CV for download/ viewing. (https://www.npmjs.com/package/@cyntler/react-doc-viewer)
-7c. display CV in seperate div using react-dom-viewer
+7c. display CV in seperate div using react-doc-viewer
 8. Add token authentication to API
 9. Allow react to store the token
 10. Control user views based on User type
